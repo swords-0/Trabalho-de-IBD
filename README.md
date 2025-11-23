@@ -11,10 +11,18 @@
 ## 🎯 Objetivo
 Relacionar informações dos participantes do ENEM 2021 (notas, renda, tecnologia) com o PIB dos municípios brasileiros para compreender o impacto do desenvolvimento econômico no desempenho educacional.
 
-## 📂 Estrutura dos Arquivos
-* `/dados`: Arquivos .csv tratados e prontos para importação.
-* `/scripts`: Scripts SQL DDL (criação) e DML (análise).
-* `/documentacao`: Relatório completo e Diagrama ER.
+## 📂 Estrutura do Repositório
+
+```bash
+.
+├── docs/                   # Documentação do projeto
+│   ├── Relatorio_Final.pdf # Relatório completo com análises e conclusões
+│   └── diagrama_er.png     # Modelo Entidade-Relacionamento (MER)
+├── data/                   # Diretório local para armazenamento dos dados brutos*
+│   ├── microdados_enem/    # (Ignorado pelo Git)
+│   └── pib_ibge/           # (Ignorado pelo Git)
+├── enem_ibge.sql           # Script SQL DDL/DML para criação e carga do banco
+└── README.md               # Este arquivo
 
 ## 🛠️ Tratamento de Dados e Metadados
 * **Fontes:** INEP (Microdados ENEM) e IBGE (PIB Municípios).
