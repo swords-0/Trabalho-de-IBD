@@ -30,7 +30,6 @@ PostgreSQL: SGBD Relacional.
 
 SQL: Linguagem para criação de tabelas (CREATE), carga (COPY) e consultas analíticas.
 
-Python/Excel: (Se aplicável) Utilizados para tratamento prévio dos dados do IBGE.
 
 ## 🚀 Como Executar o Projeto
 Pré-requisitos
@@ -52,7 +51,7 @@ No terminal, execute o comando abaixo para criar o banco de dados, as tabelas e 
 
 Bash
 
-# Substitua 'seu_usuario' pelo seu usuário do Postgres
+Substitua 'seu_usuario' pelo seu usuário do Postgres
 psql -U seu_usuario -f enem_ibge.sql
 
 ## 🛠️ Tratamento de Dados e Metadados
