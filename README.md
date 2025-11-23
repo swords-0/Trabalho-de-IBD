@@ -23,3 +23,6 @@ Relacionar informações dos participantes do ENEM 2021 (notas, renda, tecnologi
 
 ## 📊 Principais Conclusões
 Os dados indicam uma forte correlação entre PIB e acesso tecnológico, onde a rede privada de ensino supera a pública independentemente da riqueza do município.
+
+##Nota:
+Para rodar a tabela você precisa rodar o comando cat parte_* > MICRODADOS_ENEM_2021.csv para juntar os microdados do enem de novo pois o arquivo é muito grande e foi necessário dividi-lo em partes para coloca-lo em um repositório no git.
