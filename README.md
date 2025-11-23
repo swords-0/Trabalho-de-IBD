@@ -12,7 +12,7 @@
 Relacionar informações dos participantes do ENEM 2021 (notas, renda, tecnologia) com o PIB dos municípios brasileiros para compreender o impacto do desenvolvimento econômico no desempenho educacional.
 
 ## 📂 Estrutura dos Arquivos
-* `/dados`: Dados utilizados.
+* `/dados`: Arquivos .csv tratados e prontos para importação.
 * `/scripts`: Scripts SQL DDL (criação) e DML (análise).
 * `/documentacao`: Relatório completo e Diagrama ER.
 
