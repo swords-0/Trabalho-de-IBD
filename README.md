@@ -25,6 +25,36 @@ Relacionar informações dos participantes do ENEM 2021 (notas, renda, tecnologi
 └── README.md               # Este arquivo
 ```
 
+## 🛠️ Tecnologias Utilizadas
+PostgreSQL: SGBD Relacional.
+
+SQL: Linguagem para criação de tabelas (CREATE), carga (COPY) e consultas analíticas.
+
+Python/Excel: (Se aplicável) Utilizados para tratamento prévio dos dados do IBGE.
+
+## 🚀 Como Executar o Projeto
+Pré-requisitos
+PostgreSQL instalado e rodando.
+
+Usuário com permissão de superusuário ou permissão para criar bancos de dados.
+
+Passo 1: Obtenção dos Dados
+Baixe os Microdados do ENEM 2021 no portal do INEP.
+
+Extraia o arquivo MICRODADOS_ENEM_2021.csv para a pasta: ./data/microdados_enem_2021/DADOS/.
+
+Baixe a base do PIB dos Municípios (2010-2021) no IBGE.
+
+Coloque o arquivo CSV na pasta: ./data/pib_ibge/.
+
+Passo 2: Execução do Script
+No terminal, execute o comando abaixo para criar o banco de dados, as tabelas e importar os dados automaticamente:
+
+Bash
+
+# Substitua 'seu_usuario' pelo seu usuário do Postgres
+psql -U seu_usuario -f enem_ibge.sql
+
 ## 🛠️ Tratamento de Dados e Metadados
 * **Fontes:** INEP (Microdados ENEM) e IBGE (PIB Municípios).
 * **Limpeza:** Conversão de arquivos .ods para .csv, tratamento de nulos e remoção de acentos nas colunas do IBGE.
