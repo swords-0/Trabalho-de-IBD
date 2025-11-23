@@ -17,6 +17,7 @@ Relacionar informações dos participantes do ENEM 2021 (notas, renda, tecnologi
 ├── docs/                   # Documentação do projeto
 │   ├── Relatorio_Final.pdf # Relatório completo com análises e conclusões
 │   └── diagrama_er.png     # Modelo Entidade-Relacionamento (MER)
+│   └── Dicionario de dados # Dicionario para guia
 ├── data/                   # Diretório local para armazenamento dos dados brutos*
 │   ├── microdados_enem/    # (Ignorado pelo Git)
 │   └── pib_ibge/           # (Ignorado pelo Git)
