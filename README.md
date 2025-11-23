@@ -31,28 +31,30 @@ PostgreSQL: SGBD Relacional.
 SQL: Linguagem para criação de tabelas (CREATE), carga (COPY) e consultas analíticas.
 
 
-## 🚀 Como Executar o Projeto
-Pré-requisitos
-PostgreSQL instalado e rodando.
+🚀 Como Executar o Projeto
+1. Clonar o Repositório
+Primeiro, clone o repositório
 
-Usuário com permissão de superusuário ou permissão para criar bancos de dados.
+2. Baixar os Dados (Setup)
+Devido ao tamanho dos arquivos originais (+3GB), eles não estão versionados no GitHub. Você precisa baixá-los e colocá-los na estrutura que o script espera.
 
-Passo 1: Obtenção dos Dados
-Baixe os Microdados do ENEM 2021 no portal do INEP.
+Crie as pastas necessárias:
 
-Extraia o arquivo MICRODADOS_ENEM_2021.csv para a pasta: ./data/microdados_enem_2021/DADOS/.
+```
+mkdir -p data/microdados_enem_2021/DADOS data/pib_ibge
+```
 
-Baixe a base do PIB dos Municípios (2010-2021) no IBGE.
+Baixe e mova os arquivos:
 
-Coloque o arquivo CSV na pasta: ./data/pib_ibge/.
+* **ENEM 2021:** Baixe no [portal do INEP](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem). Extraia o arquivo `MICRODADOS_ENEM_2021.csv` para a pasta `data/microdados_enem_2021/DADOS/`.
+* **PIB IBGE:** Baixe o CSV do PIB dos Municípios (2010-2021) no [site do IBGE](https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9088-produto-interno-bruto-dos-municipios.html?=&t=downloads). Salve como `PIB_dos_Municipios-base_de_dados_2010-2021.csv` na pasta `data/pib_ibge/`.
 
-Passo 2: Execução do Script
-No terminal, execute o comando abaixo para criar o banco de dados, as tabelas e importar os dados automaticamente:
+3. Rodar o Script
+Com os dados no lugar, basta rodar o comando abaixo para criar o banco e importar tudo automaticamente:
 
-Bash
-
-Substitua 'seu_usuario' pelo seu usuário do Postgres
+```
 psql -U seu_usuario -f enem_ibge.sql
+```
 
 ## 🛠️ Tratamento de Dados e Metadados
 * **Fontes:** INEP (Microdados ENEM) e IBGE (PIB Municípios).
@@ -62,5 +64,4 @@ psql -U seu_usuario -f enem_ibge.sql
 ## 📊 Principais Conclusões
 Os dados indicam uma forte correlação entre PIB e acesso tecnológico, onde a rede privada de ensino supera a pública independentemente da riqueza do município.
 
-## Nota:
-Para rodar a tabela você precisa rodar o comando cat dentro da pasta \microdados_enem_2021\DADOS parte_* > MICRODADOS_ENEM_2021.csv para juntar os microdados do enem de novo pois o arquivo é muito grande e foi necessário dividi-lo em partes para coloca-lo em um repositório no git.
+
