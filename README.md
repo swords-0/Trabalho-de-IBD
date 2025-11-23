@@ -13,7 +13,6 @@ Relacionar informações dos participantes do ENEM 2021 (notas, renda, tecnologi
 
 ## 📂 Estrutura do Repositório
 
-```bash
 .
 ├── docs/                   # Documentação do projeto
 │   ├── Relatorio_Final.pdf # Relatório completo com análises e conclusões
