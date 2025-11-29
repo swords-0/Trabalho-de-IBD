@@ -19,8 +19,8 @@ Relacionar informações dos participantes do ENEM 2021 (notas, renda, tecnologi
 │   └── diagrama_er.png     # Modelo Entidade-Relacionamento (MER)
 │   └── Dicionario de dados # Dicionario para guia
 ├── data/                   # Diretório local para armazenamento dos dados brutos*
-│   ├── microdados_enem/    # (Ignorado pelo Git)
-│   └── pib_ibge/           # (Ignorado pelo Git)
+│   ├── microdados_enem/    # Baixe o arquivo
+│   └── pib_ibge/           # O PIB
 ├── enem_ibge.sql           # Script SQL DDL/DML para criação e carga do banco
 └── README.md               # Este arquivo
 ```
