@@ -32,29 +32,28 @@ SQL: Linguagem para criação de tabelas (CREATE), carga (COPY) e consultas anal
 
 
 🚀 Como Executar o Projeto
-1. Clonar o Repositório
-Primeiro, clone o repositório
 
-2. Baixar os Dados (Setup)
-Devido ao tamanho dos arquivos originais (+3GB), eles não estão versionados no GitHub. Você precisa baixá-los e colocá-los na estrutura que o script espera.
+1. Baixe os Microdados do [Enem 2021](https://download.inep.gov.br/microdados/microdados_enem_2021.zip)
+2. Extraia para a pasta ./data, que fica ./data/microdados_enem_2021/
+3. Baixe os dados do PIB IBGE (arquivo csv neste repositório)
+4. Extraia para a pasta ./data, que fica ./data/pib_ibge/
+3. Baixe o arquivo enem_ibge.sql e o coloque em ./
+4. Acessar a cli do PostgreSQL executando
+   ```sudo -u postgres psql```
+6. Crie seu usuário trocando <usuario_pc> com o nome do usuário do seu computador e uma senha qualquer:
 
-Crie as pastas necessárias:
+CREATE USER <usuario_pc> WITH LOGIN PASSWORD '<any_password>';
+ALTER USER <usuario_pc> WITH SUPERUSER;
+ALTER USER <usuario_pc> CREATEDB;
 
-```
-mkdir -p data/microdados_enem_2021/DADOS data/pib_ibge
-```
-
-Baixe e mova os arquivos:
-
-* **ENEM 2021:** Baixe no [portal do INEP](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem). Extraia o arquivo `MICRODADOS_ENEM_2021.csv` para a pasta `data/microdados_enem_2021/DADOS/`.
-* **PIB IBGE:** Baixe o CSV do PIB dos Municípios (2010-2021) no [site do IBGE](https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9088-produto-interno-bruto-dos-municipios.html?=&t=downloads). Salve como `PIB_dos_Municipios-base_de_dados_2010-2021.csv` na pasta `data/pib_ibge/`.
-
-3. Rodar o Script
-Com os dados no lugar, basta rodar o comando abaixo para criar o banco e importar tudo automaticamente:
-
-```
-psql -U seu_usuario -f enem_ibge.sql
-```
+6. Saia da CLI:
+7.  ```\q```
+8. Execute o arquivo SQL para criar a base de dados e carregar os dados (lembra de colocar seu usuário da DB):
+   ```psql -U <usuario_pc> -d postgres -f ./enem_ibge.sql```
+9. Aguarde, pois pode levar um minuto para processar
+10. Acesse novamente a CLI usando:
+    ```PAGER="less -S" psql -U <usuario_pc> -d enem_ibge```
+    para fazer consultas.
 
 ## 🛠️ Tratamento de Dados e Metadados
 * **Fontes:** INEP (Microdados ENEM) e IBGE (PIB Municípios).
