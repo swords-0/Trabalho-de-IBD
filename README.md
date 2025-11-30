@@ -32,25 +32,22 @@ SQL: Linguagem para criação de tabelas (CREATE), carga (COPY) e consultas anal
 
 
 🚀 Como Executar o Projeto
-
-1. Baixe os Microdados do [Enem 2021](https://download.inep.gov.br/microdados/microdados_enem_2021.zip)
-2. Extraia para a pasta ./data, que fica ./data/microdados_enem_2021/
-3. Baixe os dados do PIB IBGE (arquivo csv neste repositório)
-4. Extraia para a pasta ./data, que fica ./data/pib_ibge/
-5. Baixe o arquivo enem_ibge.sql e o coloque em ./
-6. Acessar a cli do PostgreSQL executando
+1. Baixe este repositório
+2. Baixe os Microdados do [Enem 2021](https://download.inep.gov.br/microdados/microdados_enem_2021.zip)
+3. Extraia para a pasta ./data, resultando em ./data/microdados_enem_2021/
+4. Acessar a cli do PostgreSQL executando
    ```sudo -u postgres psql```
-7. Crie seu usuário trocando <usuario_pc> com o nome do usuário do seu computador e uma senha qualquer:
-
+5. Crie seu usuário trocando `<usuario_pc>` com o nome do usuário do seu computador a senha que desejar:
+```
 CREATE USER <usuario_pc> WITH LOGIN PASSWORD '<any_password>';
 ALTER USER <usuario_pc> WITH SUPERUSER;
 ALTER USER <usuario_pc> CREATEDB;
-
-8. Saia da CLI: ```\q```
-9. Execute o arquivo SQL para criar a base de dados e carregar os dados (lembra de colocar seu usuário da DB):
+```
+6. Saia da CLI: ```\q```
+7. Execute o arquivo SQL para criar a base de dados e carregar os dados (lembrar de colocar seu usuário da BD):
    ```psql -U <usuario_pc> -d postgres -f ./enem_ibge.sql```
-10. Aguarde, pois pode levar um minuto para processar
-11. Acesse novamente a CLI usando:
+8. Aguarde, pois pode levar um minuto para processar
+9. Acesse novamente a CLI usando:
     ```PAGER="less -S" psql -U <usuario_pc> -d enem_ibge```
     para fazer consultas.
 
