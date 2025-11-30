@@ -14,15 +14,15 @@ Relacionar informações dos participantes do ENEM 2021 (notas, renda, tecnologi
 ## 📂 Estrutura do Repositório
 ```bash
 .
-├── docs/                   # Documentação do projeto
-│   ├── Relatorio_Final.pdf # Relatório completo com análises e conclusões
-│   └── diagrama_er.png     # Modelo Entidade-Relacionamento (MER)
-│   └── Dicionario de dados # Dicionario para guia
-├── data/                   # Diretório local para armazenamento dos dados brutos*
-│   ├── microdados_enem/    # Baixe o arquivo
-│   └── pib_ibge/           # O PIB
-├── enem_ibge.sql           # Script SQL DDL/DML para criação e carga do banco
-└── README.md               # Este arquivo
+├── docs/			# Documentação do projeto
+│   ├── Relatorio_Final.pdf	# Relatório completo com análises e conclusões
+│   └── diagrama_er.png		# Modelo Entidade-Relacionamento (MER)
+│   └── Dicionario de dados	# Dicionario para guia
+├── data/			# Diretório local para armazenamento dos dados brutos*
+│   ├── microdados_enem_2021/	# Baixe o arquivo
+│   └── pib_ibge/           	# O PIB
+├── enem_ibge.sql           	# Script SQL DDL/DML para criação e carga do banco
+└── README.md               	# Este arquivo
 ```
 
 ## 🛠️ Tecnologias Utilizadas
@@ -46,12 +46,11 @@ CREATE USER <usuario_pc> WITH LOGIN PASSWORD '<any_password>';
 ALTER USER <usuario_pc> WITH SUPERUSER;
 ALTER USER <usuario_pc> CREATEDB;
 
-6. Saia da CLI:
-7.  ```\q```
-8. Execute o arquivo SQL para criar a base de dados e carregar os dados (lembra de colocar seu usuário da DB):
+6. Saia da CLI: ```\q```
+7. Execute o arquivo SQL para criar a base de dados e carregar os dados (lembra de colocar seu usuário da DB):
    ```psql -U <usuario_pc> -d postgres -f ./enem_ibge.sql```
-9. Aguarde, pois pode levar um minuto para processar
-10. Acesse novamente a CLI usando:
+8. Aguarde, pois pode levar um minuto para processar
+9. Acesse novamente a CLI usando:
     ```PAGER="less -S" psql -U <usuario_pc> -d enem_ibge```
     para fazer consultas.
 
